@@ -1,0 +1,506 @@
+.maincontainer {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+table{
+    background-color: white;
+}
+
+.footer {
+    position: relative ;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    color: #333;
+     background-color: lightgray;
+  }
+  
+  .logoportion{
+   display:flex;
+  }
+  
+  body{
+   margin:0;
+   padding:0;
+   font-family: 'Oxygen', sans-serif;
+   background-color: white;
+  }
+  
+  .header{
+   background-color: #283593;
+   color: #FFF;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-left: 25px;
+   padding-right: 25px;
+  }
+  .nav a{
+   color: #FFF;
+   text-decoration: none;
+   display: block;
+   transition: all 0.3s ease-out;
+  }
+  .nav {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+  }
+  h1{
+   font-family: 'Raleway', sans-serif;
+  }
+  .nav li{
+   margin-left: 20px;
+  }
+  .nav a:hover{
+   color: #D1C4E9;
+   transform: rotate(6deg);
+  }
+  
+  .hero{
+   background-color: #C5Cae9;
+   padding: 60px 45px;
+   display: flex;
+   justify-content: center;
+  }
+  .hero-inner{
+   max-width: 600px;
+  }
+  .hero-inner h1{
+   font-size: 3rem;
+  }
+  .hero-inner p{
+   font-size: 1.18rem;
+   line-height: 1.5;
+  }
+  .hero-button{
+   background-color: #283593; 
+   color:#fff;
+   padding: 13px;
+   text-decoration: none;
+   border-radius: 6px;
+   font-size: 1.18rem;
+   display: inline-block;
+  }
+
+  
+  .features{
+   background-color: #EDE7F6;
+   padding: 65px 40px;
+  }
+  .features-inner{
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+   grid-column-gap: 40px;
+   grid-row-gap: 30px;
+  }
+  .featured-item h3{
+   color: #4527A0;
+  }
+  
+  .log-in{
+   width: 310px;
+   margin-left:50px;
+   padding: 20px;
+   background-color: #fff;
+   border-radius: 10px;
+   box-shadow: 2px 2px 4px #0486d6;
+  }
+  .log-in input{
+   width: 300px;
+   margin-bottom: 10px;
+   padding-top: 10px;
+   border-radius: 3px;
+  }
+  .log-in label{
+   display: block;
+   padding-top: 10px;
+   border-radius: 3px;
+  }
+  .log-in h3{
+   color: #4527A0;
+  }
+  .submit{
+   margin-top: 20px;
+  }
+  
+  .cname{
+   color: #4527A0;
+  }
+  .admin-hero{
+   background-color: #C5Cae9;
+   padding: 60px 45px;
+   display: flex;
+  }
+  
+  .admin-hero-button{
+   background-color: #7E57C2; 
+   color:#fff;
+   padding: 13px;
+   border-radius: 6px;
+   font-size: 1rem;
+   display: inline-block;
+   text-decoration: none;
+   margin-top:10px;
+  }
+  .admin-hero fieldset{
+   background-color:#fff;
+   border-radius: 10px;
+   border: none;
+   font-size:0.8rem;
+   box-shadow: 2px 2px 4px #0486d6;
+  }
+  .admin-hero legend{
+   background-color: #9575CD;
+   border-radius: 10px;
+   border: none;
+   width: 150px;
+   height: 20px;
+   text-align:center;
+   padding: 5px;
+   color: #fff;
+  }
+  .firstcopy-div{
+   margin-left: 10px;
+   padding: 10px;
+  }
+  .compare-div{
+   margin-left: 10px;
+   padding: 10px;
+   width: 200px;
+  }
+  .errorcheck-div{
+   margin-left: 10px;
+   padding: 10px;
+   width: 250px;
+  }
+  
+  .compare-div a {
+   background-color: #7E57C2; 
+   color:#fff;
+   padding: 13px;
+   border-radius: 6px;
+   font-size: 1rem;
+   display: inline-block;
+   text-decoration: none;
+   margin-top:30px;
+   margin-left:30px; 
+  }
+  
+  .errorcheck-div a {
+   background-color: #7E57C2; 
+   color:#fff;
+   padding: 13px;
+   border-radius: 6px;
+   font-size: 1rem;
+   display: inline-block;
+   text-decoration: none;
+   margin-top:30px;
+   margin-left:40px; 
+  }
+  
+  .welcomelabel{
+   font-size: 1rem;
+  }
+  
+  .logtime {
+   margin-top:10px;
+   display: inline-block; 
+  }
+  .logout{
+   margin-top:10px;
+  }
+  
+  .sitelist-div {
+   background-color: #fff;
+   margin-left: 10px;
+   width: 700px;
+   height: fit-content;
+   border-radius: 10px;
+   border:none;
+   box-shadow: 2px 2px 4px #42aaea;
+  }
+  
+  .sitelistlegend{
+   background-color: #9575CD;
+   border-radius: 10px;
+   border: none;
+   width: 150px;
+   height: 20px;
+   text-align:center;
+   padding: 5px;
+   color: #fff;
+  }
+  
+  .sitelisttable table {
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+  }
+  
+  .sitelisttable td, th {
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
+  }
+  
+  .sitelisttable tr:nth-child(even) {
+   background-color: #dddddd;
+  }
+  
+  .sitelisttable a{
+   width: 300px;
+  }
+  
+  .sitelisttable {
+   width: 700px;
+   font-family: helvetica;
+   font-size: small;
+  }
+  .sitelisttable tr{
+   height: 8px;
+  }
+  .user-features{
+   background-color: #fff;
+   height:fit-content;
+   background-color: #EDE7F6;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+  }
+  
+  .user-hero{
+   background-color: #C5Cae9;
+   padding: 20px 20px;
+   display: flex;
+  }
+  .user-hero-button{
+   background-color: #7E57C2; 
+   color:#fff;
+   padding: 13px;
+   border-radius: 6px;
+   font-size: 1rem;
+   display: inline-block;
+   text-decoration: none;
+   margin-top:10px;
+  }
+  .user-hero fieldset{
+   background-color:#fff;
+   border-radius: 10px;
+   border: none;
+   font-size:0.8rem;
+  }
+  .user-hero legend{
+   background-color: #9575CD;
+   border-radius: 10px;
+   border: none;
+   width: 150px;
+   height: 20px;
+   text-align:center;
+   padding: 5px;
+   color: #fff;
+  }
+  
+  .siteremark{
+   margin-left: 10px;
+   background-color: #fff;
+   max-width: 300px;
+   max-height: 350px;
+   border-radius:10px;
+   border:none;
+   box-shadow: 2px 2px 4px #42aaea;
+   
+  }
+  
+  .siteremarklegend{
+   background-color: #9575CD;
+   border-radius: 10px;
+   border: none;
+   width: 150px;
+   height: 20px;
+   text-align:center;
+   padding: 5px;
+   color: #fff;
+  }
+  
+  .remark{
+   width: 96%;
+   height: 70px;
+   margin-top: 10px;
+   background-color: #E8EAF6 ;
+   border-radius: 10px;
+   border:none;
+   padding-left: 8px;
+  }
+  
+  .sameremark{
+   background-color: #7E57C2; 
+   color:#fff;
+   padding: 13px;
+   border-radius: 6px;
+   font-size: 1rem;
+   display: inline-block;
+   text-decoration: none;
+   margin-top:20px;
+   border:none;
+  }
+  
+  .newremark{
+   background-color: #EDE7F6;
+   width: 320px;
+   height:fit-content;
+   border-radius:10px;
+   margin-left: 150px;
+   margin-top: 20px;
+   padding: 20px;
+  }
+  
+  .remarkbutton{
+   background-color: #7E57C2; 
+   color:#fff;
+   padding: 13px;
+   border-radius: 6px;
+   font-size: 1rem;
+   display: inline-block;
+   text-decoration: none;
+   margin-top:20px;
+   border:none;
+  }
+  
+  #userremark{
+   margin-top: 20px;
+  }
+  .newdrop{
+   width:25%;
+  }
+
+  .log-button{
+    background-color: #283593; 
+    color:#fff;
+    padding: 13px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.18rem;
+    /* display: inline-block; */
+   }
+
+
+  #waitDiv {
+  border: 20px solid #EAF0F6;  
+  border-radius: 50%;
+  border-top: 20px solid #FF7A59;  
+  width: 50px;  
+  height: 50px;
+  animation: spinner 4s linear infinite;
+}
+
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#umbody{
+  background-color: #C5Cae9;
+  margin: 10px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  width: 100px;
+  height: 30px;
+}
+
+.uupdate, .uadd{
+  width: 400px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px 1px rgba(206,89,55,0.32);
+}
+
+.sub-option {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-select{
+  width:100px;
+}
+
+#visittotalid{
+  font-size: 50px;
+  align-content: center;
+}
+
+#allotedtotalid{
+  font-size: 50px;
+  align-content: center;
+  color: coral;
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+#selectedid{
+  font-size: 30px;
+  align-content: center;
+  color: #9575CD;
+}
+#selectedid1{
+  font-size: 20px;
+  align-content: center;
+  color: #9575CD;
+}
+
+#box3{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  margin: 0 auto;
+}
+#box3inner{
+  margin-top: 150px;
+  margin-left: 280px;
+}
+#userdisplay{
+  margin: 0 autox;
+}
+
+#name {
+  margin-top: 5px;
+  width: 70%;
+  height: 20px;
+  color: white;
+  font-size: 2em;
+}
+#pwd {
+  margin-top: 5px;
+  width: 70%;
+  height: 20px;
+}
+
+.remarkTest{
+  width: 10px;
+  height: 0px;
+}
+
+.user-div{
+  box-shadow: 2px 2px 4px #0486d6;
+}

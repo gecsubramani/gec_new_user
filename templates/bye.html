@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  
+  <script type = "text/javascript" >
+    function preventBack() { window.history.forward(); }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+  </script>
+  
+  <script src="myscripts.js"></script>
+  <script src="eel.js"></script>
+  <link rel="stylesheet" href="../static/style.css">
+
+  <script>
+    function initiate(){
+      var n = localStorage.getItem('name');
+      document.getElementById('lgout').innerHTML=n;
+      document.getElementById('lgout1').innerHTML=n;
+      setTimeout("closeme())", 2000);
+      function closeme(){
+        window.close();
+      }
+    }
+  </script>
+</head>
+
+<body onload="initiate()">
+<div class="header">
+  <div class="logoportion">
+    <img class="cmplogo" src="../static/logo.png" width="80px" alt="">
+    <h1>Global-e-Content</h1>
+  </div>
+  <ul class="nav">
+    <li><a href="#"><span id="lgout"></a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Welcome to <br><span class="cname">Global-e-Content</span></h1>
+    <p>Successfully Logged out, <strong><span id="lgout1">, Close the Window!!</strong></span></p>
+  </div>
+</div>
+
+
+
+<div class="footer">
+  <p>&copy; global-e-content</p>
+</div>
+
+
+</body>
+</html>

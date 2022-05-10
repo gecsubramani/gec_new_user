@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gec - User</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <script src="text/javascript"></script>
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="../static/myscript.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  
+  <!-- stopping go back  -->
+  <script type="text/javascript">
+    function preventBack() {
+        window.history.forward(); 
+    }
+    setTimeout("preventBack()", 0); 
+    window.onunload = function () { null };
+  </script>
+  
+  <script>
+    // function initiate(){
+    //   var tabledata = document.getElementById("tdata").innerHTML;
+    //   document.getElementById("tablecontent").innerHTML=tabledata;
+    // }
+    // eel.expose(userlogoutR)
+    // function userlogoutR(){
+    //   mywin = window.open("bye.html", "_self", );
+    //   setTimeout("closeme()", 2000);
+    //   localStorage.clear();
+    //   mywin.close();
+    // }
+  
+    function loadremark(dataid){
+      did = dataid;
+      document.getElementById('selectedid').innerHTML=did;
+      document.getElementById('selectedid1').innerHTML=did;
+    }
+
+    // eel.expose(loadremarkR);
+    // function loadremarkR(rec1, rec2){
+    //   lrec1 = rec1;
+    //   lrec2 = rec2;
+    //   localStorage.setItem('lastremark', lrec2);
+    //   document.getElementById('r1').value=lrec1;
+    //   document.getElementById('r2').value=lrec2;
+    //   if (rec1=="No previous record" && rec2=="No previous record"){
+    //     document.getElementById('sremark').disabled = true;
+    //     document.getElementById("sremark").style.display = "none";
+    //   }
+    // }
+
+    function loadchangedoc(dataid){
+      var httpurl = 'http://127.0.0.1:5000/'
+      var x = httpurl + 'changedocs/' + dataid + '.html'
+      window.open(x,"bfs","fullscreen,scrollbars");
+    }
+
+    function rowfind(x){
+      rowid = x.rowIndex;
+      localStorage.setItem("rowid", rowid);
+    }
+      
+    // function sameremark(){
+    //   did = document.getElementById('selectedid').innerHTML;
+    //   var re = localStorage.getItem("lastremark");
+    //   idremark = re;
+    //   username = document.getElementById("name").innerHTML;
+    //   var div = document.getElementById("newdrop");
+    //   var position = div.options[div.selectedIndex].value;
+    //   eel.sameremarkPython(did, idremark, username);
+    // }
+
+    // function uploadfile(){
+    //   var name = localStorage.getItem("name");
+    //   var f = document.getElementById("myfile").value;
+    //   eel.uploadfilepython(f, name);
+    //   document.getElementById("box3").style.display = "block";
+    // }
+    
+    // eel.expose(uploadfilepythonR);
+    // function uploadfilepythonR(text){
+    //   document.getElementById("box3").style.display = "none";
+    //   result = text;
+    //   if (result=="Success"){
+    //     document.getElementById("uploadstatus").innerHTML="Uploaded Successfully!";
+    //     window.stop();
+    //   }else{
+    //     document.getElementById("uploadstatus").innerHTML="Error Uploading...!";
+    //     window.stop();
+    //   }
+    // }
+ 
+  </script>
+</head>
+
+<body onload="initiate()">
+  <div id="box3" style="display:none"><div id="box3inner"><img src="../static/loading.gif" alt="" width="100" height="100"></div><div id="userdisplay">Processing...</div></div>
+  <div class="header">
+    <div class="logoportion">
+      <img class="cmplogo" src="../static/logo.png" width="80px" alt="">
+      <h1>Global-e-Content</h1>
+    </div>
+    <div class="user-logged">PROFILE : [ <strong><span id="profile">{{  region  }} || {{ linktype }}</span></strong>]</div>
+    <div class="user-logged">Welcome, <strong><span id="name">{{msg1}}</span></strong></div>
+  </div>
+  
+  <div class="user-hero">
+    <fieldset class="user-div">
+      <legend>LOGIN DETAILS</legend>
+      <label class="logtime">log in: <span id="utime"> {{msg2}},  {{msg3}}</span></label><br>
+      <form action="/userlogout" method="post">
+        <input type="text" name="username" style="display: none;" value="{{msg1}}">
+        <button class="logout" id="log-out" >Log Out</button>
+      </form>
+    </fieldset><br>
+
+    <fieldset class="user-div">
+      <legend>SITES VISITED TODAY</legend>
+      <label class="visittotalclass"><strong><span id="visittotalid">{{msg5}}</span></strong></label><br>
+    </fieldset><br>
+
+    <fieldset class="user-div">
+      <legend>LIVE SITES PENDING</legend>
+      <label class="allotedtotalclass"><strong><span id="allotedtotalid">{{ total_livelinks }}</span></strong></label><br>
+    </fieldset><br>
+
+    <fieldset class="user-div">
+      <legend>SELECTED ID</legend>
+      <p class="selectedidclass"><strong><span id="selectedid"></span></strong></p><br>
+    </fieldset><br>
+
+    <fieldset class="user-div">
+      <legend>REMARK LINK UPLOAD</legend>
+      <form onsubmit="uploadfile()">
+        <label for="myfile">Select file:</label>
+        <input type="file" id="myfile" name="myfile" accept=".txt, .html, .htm, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" ><br><br>
+        <input type="submit">
+        <div id="uploadstatus"></div>
+      </form>
+    </fieldset>
+  </div>
+  
+  
+  <div class="user-features">
+    <fieldset class="sitelist-div">
+      <legend class="sitelistlegend">Sites to visit</legend>
+        <table class="sitelisttable" id="tablecontent">
+          <tr>
+            {% for header in headings %}
+            <th>{{ header }}</th>
+            {% endfor %}
+          </tr>
+          
+          {% for row in dataTable %}
+          <tr onclick=rowfind(this)>
+            <td><button class="btnSelect">{{ row[0] }}</button></td>
+            <td><a href="{{ row[1] }}">{{ row[1] }}</a></td>
+            <td>{{ row[2] }}</td>
+            <td><button class="btnSelectChange">{{ row[0] }}</button></td>
+            <td style="display: none;">{{ row[3] }}</td>
+            <td style="display: none;">{{ row[4] }}</td>
+            
+          </tr>
+          {% endfor %}
+        </table>
+    </fieldset>
+    <fieldset class="siteremark">
+      <legend class="siteremarklegend">Last 2 Remarks</legend>
+      <label for=""><strong>Remark 1 :</strong></label><br>
+      <textarea id="r1" value="" rows="5" cols="50" disabled>{{ remark1 }}</textarea><br>
+      <br>
+      <label for=""><strong>Remark 2 :</strong> </label><br>
+      <textarea id="r2" value="" rows="5" cols="50" disabled>{{ remark2 }}</textarea><br>
+      <button class="remarkbutton" id="btn-sameremark">Same Remark</button>
+      <label for=""><em>(press if same remark)</em></label>
+    </fieldset>  
+  </div>
+  <div class="newremark">
+    <div class="newremark-inner">
+      <label for="">Selected Id : <strong><span id="selectedid1"></span></strong>--Position</label> 
+        <select id="newdrop">
+         <option selected>UP</option>
+         <option>MID</option>
+         <option>DOWN</option>
+         </select>
+      <textarea id="userremark" name="w3review" rows="4" cols="40"></textarea>
+      <br>
+      <button class="remarkbutton" id="btn-submit">Submit Remark</button>
+      <p id="submit-status"></p>
+    </div>
+  </div>
+  <div id="overlay"></div>
+    <div id="popup">
+        <div class="popupcontent">
+            <h1>Some Popup Content</h1>
+        </div>
+    </div>
+  <div class="footer">
+    <div id="template"></div>
+    <p>&copy; global-e-content</p>
+  </div>
+  
+
+  
+  
+
+
+
+
+
+<!-- jquery and Ajax scripts -->
+<script>
+$(document).ready(function(){
+
+  // loading remark
+  $("#tablecontent").on('click','.btnSelect',function(){
+      // get the current row
+      var currentRow=$(this).closest("tr"); 
+      var message=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+      var r1=currentRow.find("td:eq(4)").text(); // get current row 4th TD value
+      var r2=currentRow.find("td:eq(5)").text(); // get current row 5th TD value
+      document.getElementById('selectedid').innerHTML=message;
+      document.getElementById('selectedid1').innerHTML=message;
+      localStorage.setItem("selected_id", message);
+      document.getElementById('r1').innerHTML=r1;
+      document.getElementById('r2').innerHTML=r2;
+      document.getElementById('submit-status').innerHTML="";
+  });
+  
+  // bringing changed docs 
+  $('.btnSelectChange').on ('click', function(){
+    message = localStorage.getItem("selected_id");
+    $.ajax({
+      url : "/open",
+      type : 'POST',
+      data : {"message_py": message},
+      })
+  })
+ 
+  // submit remark
+  $('#btn-submit').on ('click', function(){
+    document.getElementById("box3").style.display = "block";
+    document.getElementById("userdisplay").innerHTML="PROCESSING.....";
+    did = document.getElementById('selectedid').innerHTML;
+    idremark = document.getElementById('userremark').value;
+    username = document.getElementById("name").innerHTML;
+    var div = document.getElementById("newdrop");
+    var position = div.options[div.selectedIndex].value;
+    if (idremark=="" || did==""){
+      alert("Remark cant be empty!!")
+      document.getElementById("box3").style.display = "none";
+      document.getElementById("userdisplay").innerHTML="";
+    } else {
+      $.ajax({
+      url : "/submitremark",
+      type : 'POST',
+      data : {"dataid": did, "idremark" : idremark, "username" : username, "position" : position},
+      })
+      .done(function(data){
+        document.getElementById("box3").style.display = "none";
+        document.getElementById("visittotalid").innerHTML=data.sited_visited;
+        document.getElementById("allotedtotalid").innerHTML=data.t_livelinks;
+        document.getElementById('selectedid').innerHTML="";
+        document.getElementById('selectedid1').innerHTML="";
+        var rid = localStorage.getItem("rowid");
+        document.getElementById("tablecontent").deleteRow(rid);
+        document.getElementById('userremark').value="";
+        document.getElementById('r1').value="";
+        document.getElementById('r2').value="";
+        document.getElementById("userdisplay").innerHTML="";
+        window.location.reload();
+        alert("Record Submitted Successfully");
+      });      
+    }    
+  })
+    
+
+  // same remark
+  $('#btn-sameremark').on ('click', function(){
+    document.getElementById("box3").style.display = "block";
+    document.getElementById("userdisplay").innerHTML="PROCESSING.....";
+    did = document.getElementById('selectedid').innerHTML;
+    idremark = document.getElementById('r2').innerHTML;
+    username = document.getElementById("name").innerHTML; 
+    if (idremark=="No previous records"){
+      alert("Same Remark is not qualified!!");
+      document.getElementById("box3").style.display = "none";
+      document.getElementById("userdisplay").innerHTML="";
+    } else {
+      if (did==""){
+        alert("No Id Selected!!");
+        document.getElementById("box3").style.display = "none";
+        document.getElementById("userdisplay").innerHTML="";
+      }
+      if (did!=""){
+        $.ajax({
+        url : "/sameremark",
+        type : 'POST',
+        data : {"dataid": did, "idremark" : idremark, "username" : username},
+        })
+        .done(function(data){
+          document.getElementById("box3").style.display = "none";
+          document.getElementById("visittotalid").innerHTML=data.sited_visited;
+          document.getElementById("allotedtotalid").innerHTML=data.t_livelinks;
+          document.getElementById('selectedid').innerHTML="";
+          document.getElementById('selectedid1').innerHTML="";
+          var rid = localStorage.getItem("rowid");
+          document.getElementById("tablecontent").deleteRow(rid);
+          document.getElementById('userremark').value="";
+          document.getElementById('r1').value="";
+          document.getElementById('r2').value="";
+          document.getElementById("userdisplay").innerHTML="";
+          window.location.reload();
+          alert("Record Submitted Successfully");
+        });
+      }
+    }    
+  })
+
+
+  // logging out animation
+  $('.logout').on ('click', function(){
+    document.getElementById("box3").style.display = "block";
+    document.getElementById("userdisplay").innerHTML="PROCESSING.....";
+  })
+
+  
+
+});
+</script>
+
+
+
+</body>
+</html>
